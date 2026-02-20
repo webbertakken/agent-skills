@@ -21,4 +21,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: bash .github/validate-skills.sh
+      - run: bash scripts/validate-skills.sh

@@ -1,0 +1,9 @@
+pre-commit:
+  parallel: true
+  commands:
+    lint-markdown:
+      glob: "**/*.md"
+      run: npx markdownlint-cli2 "**/*.md"
+    validate-skills:
+      glob: "skills/*/SKILL.md"
+      run: bash scripts/validate-skills.sh
