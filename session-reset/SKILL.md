@@ -1,9 +1,9 @@
 ---
-name: reset-session
+name: session-reset
 description: >-
   Reset the session while preserving context. Writes a PROMPT.md capturing current work
   state, gracefully tears down all agents/team members, then guides the user through
-  /clear and context restoration. Supports a `new` parameter (`/reset-session new`) to
+  /clear and context restoration. Supports a `new` parameter (`/session-reset new`) to
   write only key institutional knowledge without current task/progress — for starting a
   different task while preserving learnings. Use when the context window is getting large,
   the session needs a fresh start, or when switching focus. Also use when user says
