@@ -11,15 +11,20 @@ Reusable skills for Claude Code and OpenCode.
 
 ## Installation
 
-### Claude Code (plugin)
+### Claude Code (marketplace)
 
-Load directly from the repo:
+```bash
+/plugin marketplace add webbertakken/agent-skills
+/plugin install webber@webbertakken
+```
+
+Skills are available as `/webber:context-optimizer` and `/webber:session-reset`.
+
+### Claude Code (local plugin)
 
 ```bash
 claude --plugin-dir ./agent-skills
 ```
-
-Skills are available as `/webber:context-optimizer` and `/webber:session-reset`.
 
 ### Claude Code (manual)
 
