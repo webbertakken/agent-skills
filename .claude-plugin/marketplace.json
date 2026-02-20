@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "webber",
-      "source": ".",
+      "source": "./",
       "description": "Context optimisation and session management skills",
       "version": "1.0.0"
     }
