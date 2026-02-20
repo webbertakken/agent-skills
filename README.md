@@ -1,6 +1,6 @@
 # Agent skills
 
-Reusable skills for Claude Code.
+Reusable skills for Claude Code and OpenCode.
 
 ## Skills
 
@@ -11,13 +11,33 @@ Reusable skills for Claude Code.
 
 ## Installation
 
-Copy a skill folder into `~/.claude/skills/`:
+### Claude Code (plugin)
+
+Load directly from the repo:
+
+```bash
+claude --plugin-dir ./agent-skills
+```
+
+Skills are available as `/agent-skills:context-optimizer` and `/agent-skills:session-reset`.
+
+### Claude Code (manual)
+
+Copy individual skills into `~/.claude/skills/`:
 
 ```bash
 cp -r skills/context-optimizer ~/.claude/skills/
 ```
 
-The skill will be available as `/context-optimizer` in your next Claude Code session.
+Available as `/context-optimizer` (no namespace prefix).
+
+### OpenCode
+
+Copy into `~/.config/opencode/skills/` or `.opencode/skills/` in your project:
+
+```bash
+cp -r skills/context-optimizer ~/.config/opencode/skills/
+```
 
 ## Development
 
