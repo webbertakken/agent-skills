@@ -19,7 +19,7 @@ Load directly from the repo:
 claude --plugin-dir ./agent-skills
 ```
 
-Skills are available as `/agent-skills:context-optimizer` and `/agent-skills:session-reset`.
+Skills are available as `/webber:context-optimizer` and `/webber:session-reset`.
 
 ### Claude Code (manual)
 
