@@ -19,7 +19,7 @@ Audit the current session's context window and produce actionable recommendation
 Read the following sources and estimate token counts (1 token ~ 4 characters / 0.75 words):
 
 | Source | Where to find it |
-|---|---|
+| --- | --- |
 | Global CLAUDE.md | `~/.claude/CLAUDE.md` |
 | Project CLAUDE.md / AGENTS.md | Repo root `CLAUDE.md`, `AGENTS.md` |
 | Skill metadata | Count skills listed in the system reminder |

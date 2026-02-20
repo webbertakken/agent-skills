@@ -16,10 +16,10 @@ Preserve session context across a /clear by writing state to PROMPT.md, tearing 
 
 ## Parameters
 
-| Arg | Behaviour |
-|-----|-----------|
-| _(none)_ | **Full reset** — write all four sections (task, method, key things, progress) |
-| `new` | **New-task reset** — write only the "Key things to remember" section, omitting current task, method, and progress. Use this when starting a different task but carrying over institutional knowledge. |
+| Arg        | Behaviour                                                                                                                                                                                          |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _(none)_   | **Full reset** — write all four sections (task, method, key things, progress)                                                                                                                          |
+| `new`      | **New-task reset** — write only the "Key things to remember" section, omitting current task, method, and progress. Use this when starting a different task but carrying over institutional knowledge.   |
 
 ## Workflow
 
@@ -61,6 +61,7 @@ Generate PROMPT.md at the **project root** by reviewing the current session stat
 ```
 
 Guidelines:
+
 - Be specific and actionable — the next session has zero prior context
 - Include file paths, branch names, change IDs, and concrete references
 - Capture _why_ decisions were made, not just _what_ was decided
@@ -82,6 +83,7 @@ If the working tree is already clean, skip this step silently.
 ### 3. Tear down agents
 
 Shut down all active team members gracefully:
+
 1. Read the team config to discover all active members
 2. Send `shutdown_request` to each teammate
 3. Wait for confirmations
@@ -100,6 +102,7 @@ Run `/clear` now, then tell me: **read PROMPT.md**
 ### 5. Restore (post-clear)
 
 When the user says "read PROMPT.md" after a /clear:
+
 1. Read PROMPT.md from the project root
 2. Summarise the restored context to the user
 3. Resume work based on the progress section
