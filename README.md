@@ -1,6 +1,6 @@
 # Agent skills
 
-Reusable skills for Claude Code and OpenCode.
+Reusable skills for OpenCode and Claude Code.
 
 ## Skills
 
@@ -11,20 +11,24 @@ Reusable skills for Claude Code and OpenCode.
 
 ## Installation
 
-### Claude Code (marketplace)
+### OpenCode
+
+Copy into `~/.config/opencode/skills/` or `.opencode/skills/` in your project:
 
 ```bash
+cp -r skills/context-optimizer ~/.config/opencode/skills/
+```
+
+### Claude Code (plugin)
+
+Run these inside a Claude Code session:
+
+```text
 /plugin marketplace add webbertakken/agent-skills
 /plugin install webber@webbertakken
 ```
 
 Skills are available as `/webber:context-optimizer` and `/webber:session-reset`.
-
-### Claude Code (local plugin)
-
-```bash
-claude --plugin-dir ./agent-skills
-```
 
 ### Claude Code (manual)
 
@@ -35,14 +39,6 @@ cp -r skills/context-optimizer ~/.claude/skills/
 ```
 
 Available as `/context-optimizer` (no namespace prefix).
-
-### OpenCode
-
-Copy into `~/.config/opencode/skills/` or `.opencode/skills/` in your project:
-
-```bash
-cp -r skills/context-optimizer ~/.config/opencode/skills/
-```
 
 ## Development
 
