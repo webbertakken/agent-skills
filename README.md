@@ -23,7 +23,7 @@ cp -r skills/context-optimizer ~/.config/opencode/skills/
 
 Run these inside a Claude Code session:
 
-```text
+```bash
 /plugin marketplace add webbertakken/agent-skills
 /plugin install webber@webbertakken
 ```
