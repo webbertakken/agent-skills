@@ -1,44 +1,54 @@
 # Agent skills
 
-Reusable skills for OpenCode and Claude Code.
+My reusable agent skills.
 
-## Skills
+Documentation at https://skills.sh/?q=webbertakken/
 
-| Skill | Description |
-| --- | --- |
-| [context-optimizer](skills/context-optimizer/SKILL.md) | Audit context window usage and get actionable recommendations to reduce waste |
-| [session-reset](skills/session-reset/SKILL.md) | Preserve session state to PROMPT.md, tear down agents, and restore after /clear |
-
-## Installation
-
-### OpenCode
-
-Copy into `~/.config/opencode/skills/` or `.opencode/skills/` in your project:
+## Installation (individual skills)
 
 ```bash
-cp -r skills/context-optimizer ~/.config/opencode/skills/
+npx skills add https://github.com/webbertakken/agent-skills
 ```
 
-### Claude Code (plugin)
+You should see
 
-Run these inside a Claude Code session:
+```console
+
+███████╗██╗  ██╗██╗██╗     ██╗     ███████╗
+██╔════╝██║ ██╔╝██║██║     ██║     ██╔════╝
+███████╗█████╔╝ ██║██║     ██║     ███████╗
+╚════██║██╔═██╗ ██║██║     ██║     ╚════██║
+███████║██║  ██╗██║███████╗███████╗███████║
+╚══════╝╚═╝  ╚═╝╚═╝╚══════╝╚══════╝╚══════╝
+
+┌   skills
+│
+◇  Source: https://github.com/webbertakken/agent-skills.git
+│
+◇  Repository cloned
+│
+◇  Found 2 skills
+│
+◆  Select skills to install (space to toggle)
+│  ◻ context-optimizer (Audit and optimise Claude Code context window usage. Esti...)
+│  ◻ session-reset
+└
+
+```
+
+## Alternative installation (Claude plugin)
+
+Add the repository to your plugin marketplace
 
 ```bash
 /plugin marketplace add webbertakken/agent-skills
+```
+
+Install the skills you want from the marketplace
+
+```
 /plugin install webber@webbertakken
 ```
-
-Skills are available as `/webber:context-optimizer` and `/webber:session-reset`.
-
-### Claude Code (manual)
-
-Copy individual skills into `~/.claude/skills/`:
-
-```bash
-cp -r skills/context-optimizer ~/.claude/skills/
-```
-
-Available as `/context-optimizer` (no namespace prefix).
 
 ## Development
 
@@ -49,3 +59,7 @@ lefthook install
 ```
 
 Pre-commit runs markdownlint and skill validation in parallel.
+
+## License
+
+[MIT License](./LICENSE)
