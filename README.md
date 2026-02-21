@@ -30,8 +30,8 @@ You should see
 ◇  Found 2 skills
 │
 ◆  Select skills to install (space to toggle)
-│  ◻ context-optimizer (Audit and optimise Claude Code context window usage. Esti...)
-│  ◻ session-reset
+│  ◼ context-optimizer (Audit and optimise context window usage for AI coding tools...)
+│  ◼ session-reset (Reset the session while preserving context. Commits chang...)
 └
 
 ```
