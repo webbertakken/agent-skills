@@ -6,7 +6,7 @@ Documentation at <https://skills.sh/?q=webbertakken/>
 
 ## Installation (individual skills)
 
-```bash
+```console
 npx skills add https://github.com/webbertakken/agent-skills
 ```
 
@@ -40,13 +40,13 @@ You should see
 
 Add the repository to your plugin marketplace
 
-```bash
+```console
 /plugin marketplace add webbertakken/agent-skills
 ```
 
 Install the skills you want from the marketplace
 
-```
+```console
 /plugin install webber@webbertakken
 ```
 
@@ -54,7 +54,7 @@ Install the skills you want from the marketplace
 
 Requires [lefthook](https://github.com/evilmartians/lefthook) for pre-commit hooks:
 
-```bash
+```console
 lefthook install
 ```
 
