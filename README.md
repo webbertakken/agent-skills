@@ -2,7 +2,7 @@
 
 My reusable agent skills.
 
-Documentation at https://skills.sh/?q=webbertakken/
+Documentation at <https://skills.sh/?q=webbertakken/>
 
 ## Installation (individual skills)
 
