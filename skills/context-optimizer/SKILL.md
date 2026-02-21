@@ -82,8 +82,12 @@ relevant (self-discovery).
 #### 2d. MCP server overhead
 
 Check `$CONFIG_DIR/mcp.json` and project-level `mcp.json` (if present) for configured servers. Each
-server injects its full tool schema into
-context every turn. Flag servers whose tools overlap with:
+server injects its full tool schema into context every turn.
+
+**Security** — when reading MCP config files, never display or log credentials, tokens, API keys, or
+auth headers found in server configurations. Redact sensitive values in any output shown to the user.
+
+Flag servers whose tools overlap with:
 
 - Built-in tools (Read, Write, Edit, Glob, Grep, Bash, WebFetch, WebSearch)
 - Installed skills that cover the same workflow
@@ -146,7 +150,10 @@ Saving                    ~XX,XXX tokens (XX%)
 For issues with straightforward fixes, offer to execute them:
 
 - Stage git deletions
-- Remove stale untracked files
-- Disable redundant MCP servers in `mcp.json`
+- Remove stale untracked files (never remove files matching sensitive patterns like `.env*`, `*.key`,
+  `*.pem`, `credentials.*` — warn the user instead)
+- Disable redundant MCP servers in `mcp.json` (preserve all credentials and auth config intact; only
+  toggle the `disabled` flag)
 
-Always confirm before making changes.
+Always confirm before making changes. Never delete files or modify config without explicit user approval
+for each action.

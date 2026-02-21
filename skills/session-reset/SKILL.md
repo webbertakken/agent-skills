@@ -26,9 +26,15 @@ Preserve session context across a /clear by writing state to PROMPT.md, teardown
 
 ### 1. Commit and push
 
-Check `git status` for uncommitted changes. If there are any, ask the user:
+Check `git status` for uncommitted changes. If there are any:
 
-- **Commit and push** — stage all changes, commit with a concise message, and push to the current branch
+**Security check** — before staging, scan changed files for secrets. Flag and exclude any files matching
+common sensitive patterns (`.env*`, `*.key`, `*.pem`, `credentials.*`, `*secret*`, `*.token`). Warn
+the user if any are found and never stage them without explicit confirmation.
+
+Then ask the user:
+
+- **Commit and push** — stage safe changes, commit with a concise message, and push to the current branch
 - **Commit only** — stage and commit without pushing
 - **Skip** — leave changes as-is
 
