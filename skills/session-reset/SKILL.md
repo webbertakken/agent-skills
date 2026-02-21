@@ -40,7 +40,7 @@ Then ask the user:
 
 If the user chooses to commit, use `/commit`. If they also want to push, push after the commit succeeds.
 
-If the working tree is already clean, skip this step silently.
+If the working tree is already clean, tell the user "Working tree is clean — nothing to commit." and move on.
 
 ### 2. Write PROMPT.md
 
@@ -92,11 +92,12 @@ Guidelines:
 If a team is active (check for team config in `$CONFIG_DIR/teams/`):
 
 1. Read the team config to discover all active members
-2. Send `shutdown_request` to each teammate
-3. Wait for confirmations
-4. Delete the team with `TeamDelete`
+2. List the active members to the user and confirm they want to tear down the team
+3. Send `shutdown_request` to each teammate
+4. Wait for confirmations
+5. Delete the team with `TeamDelete`
 
-If no team is active, skip this step silently.
+If no team is active, tell the user "No active team — skipping teardown." and move on.
 
 ### 4. Guide the user
 
