@@ -1,9 +1,0 @@
-{
-  "name": "webber",
-  "description": "Context optimisation and session management skills",
-  "version": "1.0.0",
-  "author": {
-    "name": "webbertakken"
-  },
-  "repository": "https://github.com/webbertakken/agent-skills"
-}

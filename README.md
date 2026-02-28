@@ -36,20 +36,6 @@ You should see
 
 ```
 
-## Alternative installation (Claude plugin)
-
-Add the repository to your plugin marketplace
-
-```console
-/plugin marketplace add webbertakken/agent-skills
-```
-
-Install the skills you want from the marketplace
-
-```console
-/plugin install webber@webbertakken
-```
-
 ## Development
 
 Requires [lefthook](https://github.com/evilmartians/lefthook) for pre-commit hooks:
