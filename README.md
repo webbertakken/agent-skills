@@ -27,11 +27,12 @@ You should see
 │
 ◇  Repository cloned
 │
-◇  Found 2 skills
+◇  Found 3 skills
 │
 ◆  Select skills to install (space to toggle)
 │  ◼ context-optimizer (Audit and optimise context window usage for AI coding tools...)
 │  ◼ session-reset (Reset the session while preserving context. Commits chang...)
+│  ◼ session-start (Start team, run dev servers, and read PROMPT.md if present...)
 └
 
 ```
