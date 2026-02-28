@@ -1,26 +1,19 @@
 ---
 name: session-reset
 description: >-
-  Reset the session while preserving context. Commits changes, writes a PROMPT.md
-  capturing current work state, tears down any active team if present, then guides the
-  user through /clear and context restoration. Supports a `new` parameter
-  (`/session-reset new`) to write only key institutional knowledge without current
-  task/progress — for starting a different task while preserving learnings. Use when the
-  context window is getting large, the session needs a fresh start, or when switching
-  focus. Also use when user says "reset", "fresh start", "save and clear", or "write
-  prompt".
+  Reset the session while preserving context. Commits changes, writes a slim
+  PROMPT.md with session-specific state (current task, method, progress), tears
+  down any active team, then guides the user through /clear and context
+  restoration. Use when the context window is getting large, the session needs a
+  fresh start, or when switching focus. Also use when user says "reset", "fresh
+  start", "save and clear", or "write prompt".
 ---
 
 # Session reset
 
-Preserve session context across a /clear by writing state to PROMPT.md, teardown, and restoring afterwards.
+Preserve session-specific state in PROMPT.md across a /clear, then restore afterwards.
 
-## Parameters
-
-| Arg        | Behaviour                                                                                                                                                                                          |
-| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| _(none)_   | **Full reset** — write all four sections (task, method, key things, progress)                                                                                                                          |
-| `new`      | **New-task reset** — write only the "Key things to remember" section, omitting current task, method, and progress. Use this when starting a different task but carrying over institutional knowledge.   |
+PROMPT.md captures **only session-specific state** — current task, method, and progress. Persistent knowledge (user preferences, codebase patterns, dev quirks, workflow lessons) is handled separately by auto-memory and must NOT be included in PROMPT.md.
 
 ## Workflow
 
@@ -46,8 +39,6 @@ If the working tree is already clean, tell the user "Working tree is clean — n
 
 Generate PROMPT.md at the **project root** by reviewing the current session state. PROMPT.md is ephemeral and must **never** be committed.
 
-#### Default mode (no args)
-
 ```markdown
 # PROMPT.md
 
@@ -58,34 +49,18 @@ Generate PROMPT.md at the **project root** by reviewing the current session stat
 <!-- Which workflow/approach is active (e.g. OpenSpec, manual, etc.) -->
 <!-- Include any active change IDs, branch names, or tracking references -->
 
-## Key things to remember
-<!-- Important decisions made, constraints, user preferences, gotchas -->
-<!-- Architectural choices, rejected approaches, edge cases discovered -->
-
 ## Progress
 <!-- Where we are in the process -->
 <!-- What's done, what's in flight, what's next -->
 <!-- Any blocking issues or open questions -->
 ```
 
-#### `new` mode (`/session-reset new`)
-
-```markdown
-# PROMPT.md
-
-## Key things to remember
-<!-- Important decisions made, constraints, user preferences, gotchas -->
-<!-- Architectural choices, rejected approaches, edge cases discovered -->
-<!-- Codebase patterns, conventions, and quirks worth preserving -->
-```
-
 Guidelines:
 
-- Be specific and actionable — the next session has zero prior context
-- Include file paths, branch names, change IDs, and concrete references
-- Capture _why_ decisions were made, not just _what_ was decided
-- In `new` mode, focus on reusable knowledge: architecture decisions, codebase quirks, user preferences, tooling setup, and gotchas — anything valuable regardless of which task comes next
-- Keep it concise but complete enough to be useful without re-investigation
+- **Do NOT include** user preferences, codebase patterns, dev quirks, or general knowledge — auto-memory handles that
+- **Do include** task-specific context: current branch, active OpenSpec change, what's done, what's next, blocking issues
+- Be specific and actionable — include file paths, branch names, change IDs, and concrete references
+- Keep it concise — typically 20-40 lines
 
 ### 3. Tear down team (if active)
 
